@@ -1,0 +1,1505 @@
+[
+    {
+        "api_name": "List all users",
+        "endpoint": "/users",
+        "description": "Retrieves a list of all registered users.",
+        "request": {
+            "method": "GET",
+            "parameters": [],
+            "example_body": {}
+        },
+        "response": {
+            "status_code": [
+                "200"
+            ],
+            "content_type": "application/json",
+            "example": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "id": {
+                            "type": "integer"
+                        },
+                        "name": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    {
+        "api_name": "Create a new user",
+        "endpoint": "/users",
+        "description": "Creates a new user with the provided details.",
+        "request": {
+            "method": "POST",
+            "parameters": [],
+            "example_body": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "response": {
+            "status_code": [
+                "201"
+            ],
+            "content_type": "application/json",
+            "example": {}
+        }
+    },
+    {
+        "api_name": "Get a user by ID",
+        "endpoint": "/users/{userId}",
+        "description": "Fetches details of a specific user based on the given user ID.",
+        "request": {
+            "method": "GET",
+            "parameters": [
+                {
+                    "name": "userId",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "integer"
+                    }
+                }
+            ],
+            "example_body": {}
+        },
+        "response": {
+            "status_code": [
+                "200"
+            ],
+            "content_type": "application/json",
+            "example": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer"
+                    },
+                    "name": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    },
+    {
+        "api_name": "Update a user by ID",
+        "endpoint": "/users/{userId}",
+        "description": "Updates the details of an existing user identified by the user ID.",
+        "request": {
+            "method": "PUT",
+            "parameters": [
+                {
+                    "name": "userId",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "integer"
+                    }
+                }
+            ],
+            "example_body": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "response": {
+            "status_code": [
+                "200"
+            ],
+            "content_type": "application/json",
+            "example": {}
+        }
+    },
+    {
+        "api_name": "Delete a user by ID",
+        "endpoint": "/users/{userId}",
+        "description": "Removes a user from the system based on the provided user ID.",
+        "request": {
+            "method": "DELETE",
+            "parameters": [
+                {
+                    "name": "userId",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "integer"
+                    }
+                }
+            ],
+            "example_body": {}
+        },
+        "response": {
+            "status_code": [
+                "204"
+            ],
+            "content_type": "application/json",
+            "example": {}
+        }
+    },
+    {
+        "api_name": "List all orders",
+        "endpoint": "/orders",
+        "description": "Retrieves a list of all orders placed in the system.",
+        "request": {
+            "method": "GET",
+            "parameters": [],
+            "example_body": {}
+        },
+        "response": {
+            "status_code": [
+                "200"
+            ],
+            "content_type": "application/json",
+            "example": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "id": {
+                            "type": "integer"
+                        },
+                        "item": {
+                            "type": "string"
+                        },
+                        "quantity": {
+                            "type": "integer"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    {
+        "api_name": "Create a new order",
+        "endpoint": "/orders",
+        "description": "Creates a new order with the specified details.",
+        "request": {
+            "method": "POST",
+            "parameters": [],
+            "example_body": {
+                "type": "object",
+                "properties": {
+                    "item": {
+                        "type": "string"
+                    },
+                    "quantity": {
+                        "type": "integer"
+                    }
+                }
+            }
+        },
+        "response": {
+            "status_code": [
+                "201"
+            ],
+            "content_type": "application/json",
+            "example": {}
+        }
+    },
+    {
+        "api_name": "Get an order by ID",
+        "endpoint": "/orders/{orderId}",
+        "description": "Fetches the details of a specific order using the order ID.",
+        "request": {
+            "method": "GET",
+            "parameters": [
+                {
+                    "name": "orderId",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "integer"
+                    }
+                }
+            ],
+            "example_body": {}
+        },
+        "response": {
+            "status_code": [
+                "200"
+            ],
+            "content_type": "application/json",
+            "example": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer"
+                    },
+                    "item": {
+                        "type": "string"
+                    },
+                    "quantity": {
+                        "type": "integer"
+                    }
+                }
+            }
+        }
+    },
+    {
+        "api_name": "Update an order by ID",
+        "endpoint": "/orders/{orderId}",
+        "description": "Updates an existing order based on the given order ID.",
+        "request": {
+            "method": "PUT",
+            "parameters": [
+                {
+                    "name": "orderId",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "integer"
+                    }
+                }
+            ],
+            "example_body": {
+                "type": "object",
+                "properties": {
+                    "item": {
+                        "type": "string"
+                    },
+                    "quantity": {
+                        "type": "integer"
+                    }
+                }
+            }
+        },
+        "response": {
+            "status_code": [
+                "200"
+            ],
+            "content_type": "application/json",
+            "example": {}
+        }
+    },
+    {
+        "api_name": "Delete an order by ID",
+        "endpoint": "/orders/{orderId}",
+        "description": "Cancels or deletes a specific order using the order ID.",
+        "request": {
+            "method": "DELETE",
+            "parameters": [
+                {
+                    "name": "orderId",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "integer"
+                    }
+                }
+            ],
+            "example_body": {}
+        },
+        "response": {
+            "status_code": [
+                "204"
+            ],
+            "content_type": "application/json",
+            "example": {}
+        }
+    },
+    {
+        "api_name": "List all products",
+        "endpoint": "/products",
+        "description": "Performs the 'GET' operation on '/products' endpoint.",
+        "request": {
+            "method": "GET",
+            "parameters": [],
+            "example_body": {}
+        },
+        "response": {
+            "status_code": [
+                "200"
+            ],
+            "content_type": "application/json",
+            "example": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "id": {
+                            "type": "integer"
+                        },
+                        "name": {
+                            "type": "string"
+                        },
+                        "price": {
+                            "type": "number"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    {
+        "api_name": "Create a new product",
+        "endpoint": "/products",
+        "description": "Performs the 'POST' operation on '/products' endpoint.",
+        "request": {
+            "method": "POST",
+            "parameters": [],
+            "example_body": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "price": {
+                        "type": "number"
+                    }
+                }
+            }
+        },
+        "response": {
+            "status_code": [
+                "201"
+            ],
+            "content_type": "application/json",
+            "example": {}
+        }
+    },
+    {
+        "api_name": "Get a product by ID",
+        "endpoint": "/products/{productId}",
+        "description": "Performs the 'GET' operation on '/products/{productId}' endpoint.",
+        "request": {
+            "method": "GET",
+            "parameters": [
+                {
+                    "name": "productId",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "integer"
+                    }
+                }
+            ],
+            "example_body": {}
+        },
+        "response": {
+            "status_code": [
+                "200"
+            ],
+            "content_type": "application/json",
+            "example": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "price": {
+                        "type": "number"
+                    }
+                }
+            }
+        }
+    },
+    {
+        "api_name": "Update a product by ID",
+        "endpoint": "/products/{productId}",
+        "description": "Performs the 'PUT' operation on '/products/{productId}' endpoint.",
+        "request": {
+            "method": "PUT",
+            "parameters": [
+                {
+                    "name": "productId",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "integer"
+                    }
+                }
+            ],
+            "example_body": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "price": {
+                        "type": "number"
+                    }
+                }
+            }
+        },
+        "response": {
+            "status_code": [
+                "200"
+            ],
+            "content_type": "application/json",
+            "example": {}
+        }
+    },
+    {
+        "api_name": "Delete a product by ID",
+        "endpoint": "/products/{productId}",
+        "description": "Performs the 'DELETE' operation on '/products/{productId}' endpoint.",
+        "request": {
+            "method": "DELETE",
+            "parameters": [
+                {
+                    "name": "productId",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "integer"
+                    }
+                }
+            ],
+            "example_body": {}
+        },
+        "response": {
+            "status_code": [
+                "204"
+            ],
+            "content_type": "application/json",
+            "example": {}
+        }
+    },
+    {
+        "api_name": "List all categories",
+        "endpoint": "/categories",
+        "description": "Performs the 'GET' operation on '/categories' endpoint.",
+        "request": {
+            "method": "GET",
+            "parameters": [],
+            "example_body": {}
+        },
+        "response": {
+            "status_code": [
+                "200"
+            ],
+            "content_type": "application/json",
+            "example": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "id": {
+                            "type": "integer"
+                        },
+                        "name": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    {
+        "api_name": "Create a new category",
+        "endpoint": "/categories",
+        "description": "Performs the 'POST' operation on '/categories' endpoint.",
+        "request": {
+            "method": "POST",
+            "parameters": [],
+            "example_body": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "response": {
+            "status_code": [
+                "201"
+            ],
+            "content_type": "application/json",
+            "example": {}
+        }
+    },
+    {
+        "api_name": "Get a category by ID",
+        "endpoint": "/categories/{categoryId}",
+        "description": "Performs the 'GET' operation on '/categories/{categoryId}' endpoint.",
+        "request": {
+            "method": "GET",
+            "parameters": [
+                {
+                    "name": "categoryId",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "integer"
+                    }
+                }
+            ],
+            "example_body": {}
+        },
+        "response": {
+            "status_code": [
+                "200"
+            ],
+            "content_type": "application/json",
+            "example": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer"
+                    },
+                    "name": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    },
+    {
+        "api_name": "Update a category by ID",
+        "endpoint": "/categories/{categoryId}",
+        "description": "Performs the 'PUT' operation on '/categories/{categoryId}' endpoint.",
+        "request": {
+            "method": "PUT",
+            "parameters": [
+                {
+                    "name": "categoryId",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "integer"
+                    }
+                }
+            ],
+            "example_body": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "response": {
+            "status_code": [
+                "200"
+            ],
+            "content_type": "application/json",
+            "example": {}
+        }
+    },
+    {
+        "api_name": "Delete a category by ID",
+        "endpoint": "/categories/{categoryId}",
+        "description": "Performs the 'DELETE' operation on '/categories/{categoryId}' endpoint.",
+        "request": {
+            "method": "DELETE",
+            "parameters": [
+                {
+                    "name": "categoryId",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "integer"
+                    }
+                }
+            ],
+            "example_body": {}
+        },
+        "response": {
+            "status_code": [
+                "204"
+            ],
+            "content_type": "application/json",
+            "example": {}
+        }
+    },
+    {
+        "api_name": "List all reviews",
+        "endpoint": "/reviews",
+        "description": "Performs the 'GET' operation on '/reviews' endpoint.",
+        "request": {
+            "method": "GET",
+            "parameters": [],
+            "example_body": {}
+        },
+        "response": {
+            "status_code": [
+                "200"
+            ],
+            "content_type": "application/json",
+            "example": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "id": {
+                            "type": "integer"
+                        },
+                        "productId": {
+                            "type": "integer"
+                        },
+                        "rating": {
+                            "type": "number"
+                        },
+                        "comment": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    {
+        "api_name": "Create a new review",
+        "endpoint": "/reviews",
+        "description": "Performs the 'POST' operation on '/reviews' endpoint.",
+        "request": {
+            "method": "POST",
+            "parameters": [],
+            "example_body": {
+                "type": "object",
+                "properties": {
+                    "productId": {
+                        "type": "integer"
+                    },
+                    "rating": {
+                        "type": "number"
+                    },
+                    "comment": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "response": {
+            "status_code": [
+                "201"
+            ],
+            "content_type": "application/json",
+            "example": {}
+        }
+    },
+    {
+        "api_name": "Get a review by ID",
+        "endpoint": "/reviews/{reviewId}",
+        "description": "Performs the 'GET' operation on '/reviews/{reviewId}' endpoint.",
+        "request": {
+            "method": "GET",
+            "parameters": [
+                {
+                    "name": "reviewId",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "integer"
+                    }
+                }
+            ],
+            "example_body": {}
+        },
+        "response": {
+            "status_code": [
+                "200"
+            ],
+            "content_type": "application/json",
+            "example": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer"
+                    },
+                    "productId": {
+                        "type": "integer"
+                    },
+                    "rating": {
+                        "type": "number"
+                    },
+                    "comment": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    },
+    {
+        "api_name": "Update a review by ID",
+        "endpoint": "/reviews/{reviewId}",
+        "description": "Performs the 'PUT' operation on '/reviews/{reviewId}' endpoint.",
+        "request": {
+            "method": "PUT",
+            "parameters": [
+                {
+                    "name": "reviewId",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "integer"
+                    }
+                }
+            ],
+            "example_body": {
+                "type": "object",
+                "properties": {
+                    "rating": {
+                        "type": "number"
+                    },
+                    "comment": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "response": {
+            "status_code": [
+                "200"
+            ],
+            "content_type": "application/json",
+            "example": {}
+        }
+    },
+    {
+        "api_name": "Delete a review by ID",
+        "endpoint": "/reviews/{reviewId}",
+        "description": "Performs the 'DELETE' operation on '/reviews/{reviewId}' endpoint.",
+        "request": {
+            "method": "DELETE",
+            "parameters": [
+                {
+                    "name": "reviewId",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "integer"
+                    }
+                }
+            ],
+            "example_body": {}
+        },
+        "response": {
+            "status_code": [
+                "204"
+            ],
+            "content_type": "application/json",
+            "example": {}
+        }
+    },
+    {
+        "api_name": "List all payments",
+        "endpoint": "/payments",
+        "description": "Performs the 'GET' operation on '/payments' endpoint.",
+        "request": {
+            "method": "GET",
+            "parameters": [],
+            "example_body": {}
+        },
+        "response": {
+            "status_code": [
+                "200"
+            ],
+            "content_type": "application/json",
+            "example": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "id": {
+                            "type": "integer"
+                        },
+                        "orderId": {
+                            "type": "integer"
+                        },
+                        "amount": {
+                            "type": "number"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    {
+        "api_name": "Create a new payment",
+        "endpoint": "/payments",
+        "description": "Performs the 'POST' operation on '/payments' endpoint.",
+        "request": {
+            "method": "POST",
+            "parameters": [],
+            "example_body": {
+                "type": "object",
+                "properties": {
+                    "orderId": {
+                        "type": "integer"
+                    },
+                    "amount": {
+                        "type": "number"
+                    }
+                }
+            }
+        },
+        "response": {
+            "status_code": [
+                "201"
+            ],
+            "content_type": "application/json",
+            "example": {}
+        }
+    },
+    {
+        "api_name": "Get a payment by ID",
+        "endpoint": "/payments/{paymentId}",
+        "description": "Performs the 'GET' operation on '/payments/{paymentId}' endpoint.",
+        "request": {
+            "method": "GET",
+            "parameters": [
+                {
+                    "name": "paymentId",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "integer"
+                    }
+                }
+            ],
+            "example_body": {}
+        },
+        "response": {
+            "status_code": [
+                "200"
+            ],
+            "content_type": "application/json",
+            "example": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer"
+                    },
+                    "orderId": {
+                        "type": "integer"
+                    },
+                    "amount": {
+                        "type": "number"
+                    }
+                }
+            }
+        }
+    },
+    {
+        "api_name": "Update a payment by ID",
+        "endpoint": "/payments/{paymentId}",
+        "description": "Performs the 'PUT' operation on '/payments/{paymentId}' endpoint.",
+        "request": {
+            "method": "PUT",
+            "parameters": [
+                {
+                    "name": "paymentId",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "integer"
+                    }
+                }
+            ],
+            "example_body": {
+                "type": "object",
+                "properties": {
+                    "amount": {
+                        "type": "number"
+                    }
+                }
+            }
+        },
+        "response": {
+            "status_code": [
+                "200"
+            ],
+            "content_type": "application/json",
+            "example": {}
+        }
+    },
+    {
+        "api_name": "Delete a payment by ID",
+        "endpoint": "/payments/{paymentId}",
+        "description": "Performs the 'DELETE' operation on '/payments/{paymentId}' endpoint.",
+        "request": {
+            "method": "DELETE",
+            "parameters": [
+                {
+                    "name": "paymentId",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "integer"
+                    }
+                }
+            ],
+            "example_body": {}
+        },
+        "response": {
+            "status_code": [
+                "204"
+            ],
+            "content_type": "application/json",
+            "example": {}
+        }
+    },
+    {
+        "api_name": "List all notifications",
+        "endpoint": "/notifications",
+        "description": "Performs the 'GET' operation on '/notifications' endpoint.",
+        "request": {
+            "method": "GET",
+            "parameters": [],
+            "example_body": {}
+        },
+        "response": {
+            "status_code": [
+                "200"
+            ],
+            "content_type": "application/json",
+            "example": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "id": {
+                            "type": "integer"
+                        },
+                        "message": {
+                            "type": "string"
+                        },
+                        "userId": {
+                            "type": "integer"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    {
+        "api_name": "Create a new notification",
+        "endpoint": "/notifications",
+        "description": "Performs the 'POST' operation on '/notifications' endpoint.",
+        "request": {
+            "method": "POST",
+            "parameters": [],
+            "example_body": {
+                "type": "object",
+                "properties": {
+                    "message": {
+                        "type": "string"
+                    },
+                    "userId": {
+                        "type": "integer"
+                    }
+                }
+            }
+        },
+        "response": {
+            "status_code": [
+                "201"
+            ],
+            "content_type": "application/json",
+            "example": {}
+        }
+    },
+    {
+        "api_name": "Get a notification by ID",
+        "endpoint": "/notifications/{notificationId}",
+        "description": "Performs the 'GET' operation on '/notifications/{notificationId}' endpoint.",
+        "request": {
+            "method": "GET",
+            "parameters": [
+                {
+                    "name": "notificationId",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "integer"
+                    }
+                }
+            ],
+            "example_body": {}
+        },
+        "response": {
+            "status_code": [
+                "200"
+            ],
+            "content_type": "application/json",
+            "example": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer"
+                    },
+                    "message": {
+                        "type": "string"
+                    },
+                    "userId": {
+                        "type": "integer"
+                    }
+                }
+            }
+        }
+    },
+    {
+        "api_name": "Update a notification by ID",
+        "endpoint": "/notifications/{notificationId}",
+        "description": "Performs the 'PUT' operation on '/notifications/{notificationId}' endpoint.",
+        "request": {
+            "method": "PUT",
+            "parameters": [
+                {
+                    "name": "notificationId",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "integer"
+                    }
+                }
+            ],
+            "example_body": {
+                "type": "object",
+                "properties": {
+                    "message": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "response": {
+            "status_code": [
+                "200"
+            ],
+            "content_type": "application/json",
+            "example": {}
+        }
+    },
+    {
+        "api_name": "Delete a notification by ID",
+        "endpoint": "/notifications/{notificationId}",
+        "description": "Performs the 'DELETE' operation on '/notifications/{notificationId}' endpoint.",
+        "request": {
+            "method": "DELETE",
+            "parameters": [
+                {
+                    "name": "notificationId",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "integer"
+                    }
+                }
+            ],
+            "example_body": {}
+        },
+        "response": {
+            "status_code": [
+                "204"
+            ],
+            "content_type": "application/json",
+            "example": {}
+        }
+    },
+    {
+        "api_name": "List all inventory items",
+        "endpoint": "/inventory",
+        "description": "Performs the 'GET' operation on '/inventory' endpoint.",
+        "request": {
+            "method": "GET",
+            "parameters": [],
+            "example_body": {}
+        },
+        "response": {
+            "status_code": [
+                "200"
+            ],
+            "content_type": "application/json",
+            "example": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "id": {
+                            "type": "integer"
+                        },
+                        "product": {
+                            "type": "string"
+                        },
+                        "quantity": {
+                            "type": "integer"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    {
+        "api_name": "Create a new inventory item",
+        "endpoint": "/inventory",
+        "description": "Performs the 'POST' operation on '/inventory' endpoint.",
+        "request": {
+            "method": "POST",
+            "parameters": [],
+            "example_body": {
+                "type": "object",
+                "properties": {
+                    "product": {
+                        "type": "string"
+                    },
+                    "quantity": {
+                        "type": "integer"
+                    }
+                }
+            }
+        },
+        "response": {
+            "status_code": [
+                "201"
+            ],
+            "content_type": "application/json",
+            "example": {}
+        }
+    },
+    {
+        "api_name": "Get an inventory item by ID",
+        "endpoint": "/inventory/{inventoryId}",
+        "description": "Performs the 'GET' operation on '/inventory/{inventoryId}' endpoint.",
+        "request": {
+            "method": "GET",
+            "parameters": [
+                {
+                    "name": "inventoryId",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "integer"
+                    }
+                }
+            ],
+            "example_body": {}
+        },
+        "response": {
+            "status_code": [
+                "200"
+            ],
+            "content_type": "application/json",
+            "example": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer"
+                    },
+                    "product": {
+                        "type": "string"
+                    },
+                    "quantity": {
+                        "type": "integer"
+                    }
+                }
+            }
+        }
+    },
+    {
+        "api_name": "Update an inventory item by ID",
+        "endpoint": "/inventory/{inventoryId}",
+        "description": "Performs the 'PUT' operation on '/inventory/{inventoryId}' endpoint.",
+        "request": {
+            "method": "PUT",
+            "parameters": [
+                {
+                    "name": "inventoryId",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "integer"
+                    }
+                }
+            ],
+            "example_body": {
+                "type": "object",
+                "properties": {
+                    "product": {
+                        "type": "string"
+                    },
+                    "quantity": {
+                        "type": "integer"
+                    }
+                }
+            }
+        },
+        "response": {
+            "status_code": [
+                "200"
+            ],
+            "content_type": "application/json",
+            "example": {}
+        }
+    },
+    {
+        "api_name": "Delete an inventory item by ID",
+        "endpoint": "/inventory/{inventoryId}",
+        "description": "Performs the 'DELETE' operation on '/inventory/{inventoryId}' endpoint.",
+        "request": {
+            "method": "DELETE",
+            "parameters": [
+                {
+                    "name": "inventoryId",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "integer"
+                    }
+                }
+            ],
+            "example_body": {}
+        },
+        "response": {
+            "status_code": [
+                "204"
+            ],
+            "content_type": "application/json",
+            "example": {}
+        }
+    },
+    {
+        "api_name": "List all reports",
+        "endpoint": "/reports",
+        "description": "Performs the 'GET' operation on '/reports' endpoint.",
+        "request": {
+            "method": "GET",
+            "parameters": [],
+            "example_body": {}
+        },
+        "response": {
+            "status_code": [
+                "200"
+            ],
+            "content_type": "application/json",
+            "example": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "id": {
+                            "type": "integer"
+                        },
+                        "name": {
+                            "type": "string"
+                        },
+                        "generatedAt": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    {
+        "api_name": "Create a new report",
+        "endpoint": "/reports",
+        "description": "Performs the 'POST' operation on '/reports' endpoint.",
+        "request": {
+            "method": "POST",
+            "parameters": [],
+            "example_body": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "response": {
+            "status_code": [
+                "201"
+            ],
+            "content_type": "application/json",
+            "example": {}
+        }
+    },
+    {
+        "api_name": "Get a report by ID",
+        "endpoint": "/reports/{reportId}",
+        "description": "Performs the 'GET' operation on '/reports/{reportId}' endpoint.",
+        "request": {
+            "method": "GET",
+            "parameters": [
+                {
+                    "name": "reportId",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "integer"
+                    }
+                }
+            ],
+            "example_body": {}
+        },
+        "response": {
+            "status_code": [
+                "200"
+            ],
+            "content_type": "application/json",
+            "example": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "generatedAt": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    },
+    {
+        "api_name": "Update a report by ID",
+        "endpoint": "/reports/{reportId}",
+        "description": "Performs the 'PUT' operation on '/reports/{reportId}' endpoint.",
+        "request": {
+            "method": "PUT",
+            "parameters": [
+                {
+                    "name": "reportId",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "integer"
+                    }
+                }
+            ],
+            "example_body": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "response": {
+            "status_code": [
+                "200"
+            ],
+            "content_type": "application/json",
+            "example": {}
+        }
+    },
+    {
+        "api_name": "Delete a report by ID",
+        "endpoint": "/reports/{reportId}",
+        "description": "Performs the 'DELETE' operation on '/reports/{reportId}' endpoint.",
+        "request": {
+            "method": "DELETE",
+            "parameters": [
+                {
+                    "name": "reportId",
+                    "in": "path",
+                    "required": true,
+                    "schema": {
+                        "type": "integer"
+                    }
+                }
+            ],
+            "example_body": {}
+        },
+        "response": {
+            "status_code": [
+                "204"
+            ],
+            "content_type": "application/json",
+            "example": {}
+        }
+    },
+    {
+        "api_name": "Log in a user",
+        "endpoint": "/auth/login",
+        "description": "Performs the 'POST' operation on '/auth/login' endpoint.",
+        "request": {
+            "method": "POST",
+            "parameters": [],
+            "example_body": {
+                "type": "object",
+                "properties": {
+                    "username": {
+                        "type": "string"
+                    },
+                    "password": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "response": {
+            "status_code": [
+                "200"
+            ],
+            "content_type": "application/json",
+            "example": {}
+        }
+    },
+    {
+        "api_name": "Register a new user",
+        "endpoint": "/auth/register",
+        "description": "Performs the 'POST' operation on '/auth/register' endpoint.",
+        "request": {
+            "method": "POST",
+            "parameters": [],
+            "example_body": {
+                "type": "object",
+                "properties": {
+                    "username": {
+                        "type": "string"
+                    },
+                    "password": {
+                        "type": "string"
+                    },
+                    "email": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "response": {
+            "status_code": [
+                "201"
+            ],
+            "content_type": "application/json",
+            "example": {}
+        }
+    },
+    {
+        "api_name": "Log out a user",
+        "endpoint": "/auth/logout",
+        "description": "Performs the 'POST' operation on '/auth/logout' endpoint.",
+        "request": {
+            "method": "POST",
+            "parameters": [],
+            "example_body": {
+                "type": "object",
+                "properties": {
+                    "userId": {
+                        "type": "integer"
+                    }
+                }
+            }
+        },
+        "response": {
+            "status_code": [
+                "200"
+            ],
+            "content_type": "application/json",
+            "example": {}
+        }
+    }
+]

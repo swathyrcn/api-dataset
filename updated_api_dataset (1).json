@@ -1,8 +1,117 @@
 [
     {
-        "api_name": "List all users",
-        "endpoint": "/users",
-        "description": "Retrieves a list of all registered users.",
+          "api_name": "Reboot API",
+          "endpoint": "/command/reboot",
+          "description": "Triggers a reboot command to the target device.",
+          "request": {
+            "method": "POST",
+            "parameters": [],
+            "example_body": {}
+          },
+          "response": {
+            "status_code": ["200"],
+            "content_type": "application/json",
+            "example": {
+              "status": "success",
+              "message": "Device reboot initiated."
+            }
+          },
+          "supported_devices": ["device_a", "device_c"]
+        },
+        {
+          "api_name": "Test Call API",
+          "endpoint": "/command/testcall",
+          "description": "Sends a test call command to verify device connectivity.",
+          "request": {
+            "method": "POST",
+            "parameters": [],
+            "example_body": {}
+          },
+          "response": {
+            "status_code": ["200"],
+            "content_type": "application/json",
+            "example": {
+              "status": "success",
+              "message": "Test call sent successfully."
+            }
+          },
+          "supported_devices": ["device_b"]
+        },
+        {
+          "api_name": "Software Update API",
+          "endpoint": "/device/sw_update",
+          "description": "Initiates a software update on the device.",
+          "request": {
+            "method": "POST",
+            "parameters": [],
+            "example_body": {
+              "version": "1.2.3",
+              "force": false
+            }
+          },
+          "response": {
+            "status_code": ["202"],
+            "content_type": "application/json",
+            "example": {
+              "status": "in_progress",
+              "message": "Software update started."
+            }
+          },
+          "supported_devices": ["device_b", "device_d"]
+        },
+        {
+          "api_name": "Device Config Update API",
+          "endpoint": "/device/config-update",
+          "description": "Updates the configuration settings of the device.",
+          "request": {
+            "method": "PUT",
+            "parameters": [],
+            "example_body": {
+              "config": {
+                "mode": "eco",
+                "interval": 15
+              }
+            }
+          },
+          "response": {
+            "status_code": ["200"],
+            "content_type": "application/json",
+            "example": {
+              "status": "success",
+              "message": "Configuration updated."
+            }
+          },
+          "supported_devices": ["device_c", "device_d"]
+        },
+        {
+          "api_name": "Device Onboarding API",
+          "endpoint": "/device/onboard",
+          "description": "Registers a new device into the system.",
+          "request": {
+            "method": "POST",
+            "parameters": [],
+            "example_body": {
+              "device_id": "abc123",
+              "name": "Sensor-X",
+              "location": "Building 1"
+            }
+          },
+          "response": {
+            "status_code": ["201"],
+            "content_type": "application/json",
+            "example": {
+              "status": "success",
+              "message": "Device onboarded successfully."
+            }
+          },
+          "supported_devices": ["device_a", "device_b", "device_d"]
+        },
+      
+      
+    {
+        "api_name": "List all devices",
+        "endpoint": "/devices",
+        "description": "Retrieves a list of all devices.",
         "request": {
             "method": "GET",
             "parameters": [],
@@ -30,9 +139,9 @@
         }
     },
     {
-        "api_name": "Create a new user",
-        "endpoint": "/users",
-        "description": "Creates a new user with the provided details.",
+        "api_name": "Create a new device type",
+        "endpoint": "/device",
+        "description": "Creates a new device with the provided details.",
         "request": {
             "method": "POST",
             "parameters": [],
@@ -54,9 +163,9 @@
         }
     },
     {
-        "api_name": "Get a user by ID",
-        "endpoint": "/users/{userId}",
-        "description": "Fetches details of a specific user based on the given user ID.",
+        "api_name": "Get a device by ID",
+        "endpoint": "/device/{deviceid}",
+        "description": "Fetches details of a specific device based on the given user ID.",
         "request": {
             "method": "GET",
             "parameters": [
@@ -87,39 +196,6 @@
                     }
                 }
             }
-        }
-    },
-    {
-        "api_name": "Update a user by ID",
-        "endpoint": "/users/{userId}",
-        "description": "Updates the details of an existing user identified by the user ID.",
-        "request": {
-            "method": "PUT",
-            "parameters": [
-                {
-                    "name": "userId",
-                    "in": "path",
-                    "required": true,
-                    "schema": {
-                        "type": "integer"
-                    }
-                }
-            ],
-            "example_body": {
-                "type": "object",
-                "properties": {
-                    "name": {
-                        "type": "string"
-                    }
-                }
-            }
-        },
-        "response": {
-            "status_code": [
-                "200"
-            ],
-            "content_type": "application/json",
-            "example": {}
         }
     },
     {
